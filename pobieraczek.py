@@ -21,7 +21,8 @@ print(bcolors.OK+ "Wklej link do wideo na YT" + bcolors.ENDC)
 url = input(bcolors.OK+"link: "+bcolors.ENDC+bcolors.BLUE)
 
 #folder
-#os.mkdir("Pobieraczek")
+if not os.path.exists("Pobieraczek"):
+       os.mkdir("Pobieraczek")
 
 youtube = pytube.YouTube(url, on_progress)
 tytul = youtube.title
